@@ -1,0 +1,22 @@
+!!! 5
+%html
+  %head
+    %title Status Codes
+    %link{ :rel=>'stylesheet',:href=> '/css/bootstrap.css',:type=>"text/css"}
+    %link{ :rel=>'stylesheet',:href=> '/css/bootstrap-responsive.css',:type=>"text/css"}
+    %link{ :rel=>'stylesheet',:href=> '/css/screen.css',:type=>"text/css"}
+  %body
+    .navbar
+      .navbar-inner
+        .container
+          %a.brand{:href=>'#'} Status Codes
+    .container
+      .content
+        =yield
+      .footer
+        Kyle Fritz &copy; 2012
+
+    %script{ :src=> 'http://code.jquery.com/jquery-1.7.2.min.js'}
+    %script{ :src=> '/js/bootstrap.js'}
+    %script{ :src=> '/js/app.js'}
+
