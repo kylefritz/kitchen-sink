@@ -8,8 +8,8 @@ $(function(){
       data:$form.serialize()
     }).done(function(){
       console.log('you did it');
-    }).fail(function(){
-      console.log('come on!');
+    }).fail(function(xhr,status){
+      console.log('come on!',xhr.status,xhr.statusText);
     });
 
     return false;
