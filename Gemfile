@@ -2,6 +2,8 @@ source :rubygems
 
 gem 'sinatra'
 gem 'haml'
+gem 'google-api-client'
+gem 'rest-client'
 gem 'ohm'
 
 
