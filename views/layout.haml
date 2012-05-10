@@ -36,6 +36,21 @@
 
     %script{ :src=> 'http://code.jquery.com/jquery-1.7.2.min.js'}
     %script{ :src=> '/js/bootstrap.js'}
+    %script{ :src=>"http://js.pusher.com/1.11/pusher.min.js"}
+    :javascript
+      // Enable pusher logging - don't include this in production
+      Pusher.log = function(message) {
+        if (window.console && window.console.log) window.console.log(message);
+      };
+
+      // Flash fallback logging - don't include this in production
+      WEB_SOCKET_DEBUG = true;
+
+      var pusher = new Pusher('#{Pusher.key}');
+      var channel = pusher.subscribe('test_channel');
+      channel.bind('my_event', function(data) {
+        alert(data);
+      });
     %script{ :src=> '/js/app.js'}
     :javascript
       var _gaq = _gaq || [];

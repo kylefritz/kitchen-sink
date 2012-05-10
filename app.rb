@@ -1,10 +1,11 @@
-require 'sinatra'
-require 'haml'
-require 'rest_client'
-require 'json'
-require 'google/api_client'
-require 'ohm'
-require './lib.rb'
+require "sinatra"
+require "haml"
+require "rest_client"
+require "json"
+require "google/api_client"
+require "ohm"
+require "./lib.rb"
+require "pusher"
 
 set :haml, :format => :html5
 enable  :sessions, :logging
@@ -23,6 +24,9 @@ before do
   #   redirect(url('/oauth2authorize'))
   # end
   @email=session[:email]
+  Pusher.app_id = ENV['PUSHER_APP_ID']
+  Pusher.key = ENV['PUSHER_KEY']
+  Pusher.secret = ENV['PUSHER_SECRET']
 end
 
 def get_client
@@ -70,7 +74,7 @@ get '/session' do
 end
 
 get '/test' do
-  "hi kyle!!"
+  "pusher #{Pusher.key}"
 end
 
 

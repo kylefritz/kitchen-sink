@@ -8,7 +8,7 @@ gem 'rake'
 gem 'google-api-client'
 gem 'rest-client'
 
-
+gem 'pusher'
 gem 'ohm'
 
 group :developement do
