@@ -12,8 +12,6 @@ end
 task :setup do
 	sh "heroku plugins:install git://github.com/ddollar/heroku-accounts.git"
 
-
-
 	print "1.) heroku account, then use 'heroku accounts:set <name>'"
-	print "2.) .env file"
+	print "2.) .env file, copy from sample.env"
 end

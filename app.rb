@@ -73,10 +73,12 @@ get '/session' do
   "hi kyle, session is #{session.inspect}"
 end
 
-get '/test' do
-  "pusher #{Pusher.key}"
+get '/send-event' do
+  Pusher['test_channel'].trigger('greet', {
+    :greeting => "Hello there!"
+  })
+  "ok"
 end
-
 
 post "/make" do
   @something=params[:hi]

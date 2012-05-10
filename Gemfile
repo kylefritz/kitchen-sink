@@ -13,7 +13,6 @@ gem 'ohm'
 
 group :developement do
   gem 'heroku'
-  gem 'shotgun'
 end
 
 group :production do
@@ -23,4 +22,5 @@ end
 gem 'foreman'
 
 #server
+gem 'shotgun'
 gem 'thin'
