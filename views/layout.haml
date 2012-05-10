@@ -9,14 +9,42 @@
     .navbar
       .navbar-inner
         .container
-          %a.brand{:href=>'#'} Status Codes
+          %a.brand{:href=>'/'} Kitchen Sink
     .container
       .content
-        =yield
+        .row
+          .span4
+            .well
+              %ul.nav.nav-list
+                %li
+                  %a{:href => url("/ga")}
+                    %i.icon-book
+                    Google Analytics Exp
+                %li
+                  %a{:href => url("/oauth2authorize")}
+                    Google OAuth (set env vars)
+                %li
+                  %a{:href => url("/session")}
+                    explore session
+                %li
+                  %a{:href => url("/status-codes")}
+                    status codes
+          .span8
+            =yield
       .footer
         Kyle Fritz &copy; 2012
 
     %script{ :src=> 'http://code.jquery.com/jquery-1.7.2.min.js'}
     %script{ :src=> '/js/bootstrap.js'}
     %script{ :src=> '/js/app.js'}
+    :javascript
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-31071936-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/u/ga_debug.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
 

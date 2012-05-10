@@ -15,3 +15,10 @@ $(function(){
     return false;
   });
 });
+
+$(document).on('click','[data-at]',function(){
+  _gat._getTrackerByName()._trackEvent('time-delay','internal');
+  console.log('will track');
+  setTimeout('document.location = "' + $(this).attr('href') + '"', 50);
+  return false;
+});

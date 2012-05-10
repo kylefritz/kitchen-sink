@@ -1,1 +1,1 @@
-rvm gemset use status-codes
+rvm gemset use kitchen-sink

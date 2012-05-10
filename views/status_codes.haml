@@ -1,0 +1,11 @@
+-if @something
+  .alert.alert-block
+    %strong yo you said
+    =@something
+
+%h2= "let's test some status codes #{@email}"
+
+%form.form-inline{:action=>url("/make"),:method=>"POST"}
+  %input{:type=>'text',:name=>'hi'}
+  %input.btn{:type=>'submit',:value=>'do it'}
+

@@ -1,0 +1,18 @@
+/*
+sticky footer:
+https://github.com/twitter/bootstrap/issues/306
+*/
+.footer {
+    bottom: 0;
+    position: fixed;
+    z-index: -1;
+}
+
+.content {
+    margin-bottom: 36px; /* Set this to the height of your footer. */
+}
+/*
+
+/end sticky footer
+
+*/

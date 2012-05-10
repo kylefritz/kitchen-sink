@@ -1,0 +1,14 @@
+- if @something
+  .alert.alert-block
+    %strong= @something
+
+%h1 Just some GA experiments
+%ul
+  %li
+    %a{:href => "#", :onclick => "_gaq.push(['_trackEvent', 'click', 'nowhere link'])"} No where link
+  %li
+    %a{:href => "/internal", :onclick => "_gaq.push(['_trackEvent', 'click', 'internal link'])"} internal link
+  %li
+    %a{:href => "http://simplicitysignals.com", :onclick => "_gaq.push(['_trackEvent', 'click', 'external link'])"} external link
+  %li
+    %a{"data-at" => "", :href => "/internal"} via time delayed

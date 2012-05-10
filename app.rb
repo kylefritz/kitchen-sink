@@ -18,9 +18,10 @@ end
 
 before do
   Ohm.connect :url => ENV['REDISTOGO_URL']
-  if not session[:email] || request.path_info =~ /^\/oauth2/
-    redirect(url('/oauth2authorize'))
-  end
+  # if not session[:email] || request.path_info =~ /^\/oauth2/
+  #   redirect(url('/oauth2authorize'))
+  # end
+  @email=session[:email]
 end
 
 def get_client
@@ -52,8 +53,15 @@ get '/oauth2callback' do
 end
 
 get '/' do
-  @email=session[:email]
   haml :index
+end
+
+get '/status-codes' do
+  haml :status_codes
+end
+
+get '/ga' do
+  haml :ga
 end
 
 get '/session' do
