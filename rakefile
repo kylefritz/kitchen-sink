@@ -1,0 +1,9 @@
+task :default => :welcome
+
+task :welcome do
+    sh "echo Rake is up and running. Hurrah!"
+end
+
+task :setup do
+	sh "heroku plugins:install git://github.com/ddollar/heroku-accounts.git"
+end

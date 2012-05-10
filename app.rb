@@ -7,7 +7,8 @@ require 'ohm'
 require './lib.rb'
 
 set :haml, :format => :html5
-enable :sessions
+enable  :sessions, :logging
+
 
 #set to default for dev since will not last with shotgun
 set :session_secret, ENV['SESSION_KEY'] || 'super secret key'
@@ -67,6 +68,11 @@ end
 get '/session' do
   "hi kyle, session is #{session.inspect}"
 end
+
+get '/test' do
+  "hi kyle!!"
+end
+
 
 post "/make" do
   @something=params[:hi]
