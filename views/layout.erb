@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html ng-app>
+  <head>
+    <title>Kitchen Sink</title>
+    <link href='/css/bootstrap.css' rel='stylesheet' type='text/css'>
+    <link href='/css/bootstrap-responsive.css' rel='stylesheet' type='text/css'>
+    <link href='/css/screen.css' rel='stylesheet' type='text/css'>
+    <!--eliminate template flash-->
+    <script src="http://code.angularjs.org/angular-1.0.0rc8.min.js"></script>
+  </head>
+  <body>
+    <div class='navbar'>
+      <div class='navbar-inner'>
+        <div class='container'>
+          <a class='brand' href='/'>Kitchen Sink</a>
+        </div>
+      </div>
+    </div>
+    <div class='container'>
+      <div class='content'>
+        <div class='row'>
+          <div class='span4'>
+            <div class='well'>
+              <ul class='nav nav-list'>
+                <li>
+                  <a href='http://localhost:5000/'>
+                    <i class='icon-book'></i>
+                    back to slash
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class='span8'>
+            <%= yield %>
+          </div>
+        </div>
+      </div>
+      <div class='footer'>
+        Kyle Fritz &copy; 2012
+      </div>
+    </div>
+    <script src='http://code.jquery.com/jquery-1.7.2.min.js'></script>
+    <script src='/js/bootstrap.js'></script>
+  </body>
+</html>

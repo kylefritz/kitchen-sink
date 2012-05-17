@@ -61,6 +61,10 @@ get '/' do
   haml :index
 end
 
+get '/angularjs' do
+  erb :angularjs
+end
+
 get '/status-codes' do
   haml :status_codes
 end
