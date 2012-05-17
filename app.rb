@@ -65,6 +65,10 @@ get '/angularjs' do
   erb :angularjs
 end
 
+get '/todo' do
+  erb :angular_todo
+end
+
 get '/status-codes' do
   haml :status_codes
 end

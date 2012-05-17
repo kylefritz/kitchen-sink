@@ -16,3 +16,8 @@ https://github.com/twitter/bootstrap/issues/306
 /end sticky footer
 
 */
+
+.done-true {
+  text-decoration: line-through;
+  color: grey;
+}
